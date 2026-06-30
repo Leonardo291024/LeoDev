@@ -1,0 +1,394 @@
+/* Variables de color - Paleta sugerida */
+:root {
+    --bg-color: #000000;          /* Negro */
+    --text-color: #ffffff;
+    --accent-blue: #2d86c1;       /* Azul Metálico */
+    --accent-red: #d84134;        /* Rojo Oscuro */
+}
+
+/* Variantes para el modo alternativo (claro) */
+.light-mode {
+    --bg-color: #f4f4f4;
+    --text-color: #1a1a1a;
+    --accent-blue: #2e86c1;
+    --accent-red: #e74c3c;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+     font-family: "Saira Stencil", sans-serif;
+    transition: background 0.3s ease;
+    margin: 0;
+}
+
+/*SECCION DE NAVEGACION*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+nav .logo{
+    font-size: 2rem;
+}
+
+/*SECCION HERO*/
+
+#hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 5px solid var(--accent-red);
+    margin: 50px;
+}
+
+button {
+    color: var(--accent-blue);
+    background-color: transparent;
+    border: 1px solid var(--accent-blue);
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+/*SECCION SOBRE MI*/
+
+#about {
+    padding: 100px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #b0b0b0; /* Gris suave para no cansar la vista */
+    margin-bottom: 20px;
+}
+
+.about-text strong {
+    color: var(--accent-blue); /* Resaltado en tu azul metálico */
+}
+
+/* Decoración minimalista */
+.about-decoration {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.metal-line {
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-blue));
+    border-radius: 2px;
+}
+
+.metal-line.short {
+    width: 60%;
+    background: var(--accent-red);
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-decoration {
+        width: 100%;
+        align-items: center;
+    }
+}
+
+/*SECCION DE SKILLS*/
+
+#skills {
+    padding: 60px 20px;
+    background-color: rgba(20, 20, 20, 0.5); /* Un tono ligeramente distinto al fondo */
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: var(--bg-color);
+    border-top: 3px solid var(--accent-red);
+    border-right: 1px solid var(--accent-blue);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    border-top-color: var(--accent-blue);
+    border-right-color: var(--accent-red);
+    transform: scale(1.05);
+}
+
+.skill-icon {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0;
+}
+
+/*SECCION DE PROYECTOS*/
+
+#proyectos {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--accent-red);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Contenedor Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjeta de Proyecto */
+.project-card {
+    background: linear-gradient(145deg, #1a1a1a, #000000);
+    border: 1px solid var(--accent-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project-card .imagen-proyecto{
+    width: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(27, 79, 114, 0.4); /* Sombra azul metálico */
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    color: var(--accent-blue);
+    margin-top: 0;
+}
+
+.tags {
+    margin: 15px 0;
+}
+
+.tags span {
+    font-size: 0.8rem;
+    background: var(--accent-red);
+    padding: 4px 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+}
+
+.btn-project {
+    display: inline-block;
+    margin-top: 15px;
+    margin-right: 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-red);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.btn-project:hover {
+    color: var(--accent-red);
+}
+
+/*SECCION DE FOOTER*/
+
+footer {
+    background-color: #050505; /* Un negro más profundo */
+    padding: 40px 20px;
+    border-top: 1px solid var(--accent-blue);
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-brand p {
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.dev-tag {
+    font-size: 0.8rem;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+}
+
+.social-item {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Línea decorativa roja al pasar el mouse */
+.social-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-red);
+    transition: width 0.3s ease;
+}
+
+.social-item:hover {
+    color: var(--accent-red);
+}
+
+.social-item:hover::after {
+    width: 100%;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/*BOTON FLOTANTE DE WATSAPP*/
+
+/* Contenedor del botón */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+/* El círculo del icono */
+.wa-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-red); /* Rojo metálico */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    box-shadow: 0 0 15px rgba(146, 43, 33, 0.6);
+    border: 2px solid var(--accent-blue); /* Borde azul metálico */
+    z-index: 2;
+}
+
+/* El texto que sale al lado */
+.wa-text {
+    background-color: var(--accent-blue);
+    color: white;
+    padding: 8px 15px 8px 30px;
+    margin-left: -20px; /* Se esconde un poco tras el círculo */
+    border-radius: 0 20px 20px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+/* Efectos al pasar el mouse (Hover) */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float:hover .wa-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(146, 43, 33, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(146, 43, 33, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(146, 43, 33, 0); }
+}
+
+.wa-icon {
+    animation: pulse 2s infinite;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .wa-text {
+        display: none; /* En móviles mejor dejar solo el círculo */
+    }
+}
